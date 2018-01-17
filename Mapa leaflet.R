@@ -1,15 +1,15 @@
 library(leaflet)
 # install.packages("leaflet")
 
-map <- leaflet(width = 400, height = 200) %>%
-        addTiles() %>%
-        addMarkers(lng = 123.251,
-                   lat = 49.263,
+map <- leaflet(width = 400, height = 200) %>%  # creacion de la caja, ancho y alto
+        addTiles() %>%   # añadidos
+        addMarkers(lng = 123.251,      # seleccionamos coordenadas
+                   lat = 49.263,        
                    popup = "you are here")
 
 map
-# primer mapa creado con la libreria leaflet; voy a probar metiendo unas coordenadas de un aeropuerto al azar
 
+# primer mapa creado con la libreria leaflet; voy a probar metiendo unas coordenadas de un aeropuerto al azar
 map1 <- leaflet(width = 400, height = 200) %>%
         addTiles() %>%
         addMarkers(lng = c(75.4404, -84.42694),
