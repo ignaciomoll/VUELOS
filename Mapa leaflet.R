@@ -81,3 +81,8 @@ map <- leaflet() %>%
           lat = 49.263,
           zoom = 13)
 
+
+
+# Esto simplemente agrega cada punto único al conjunto de datos.
+p_small <- pollen_subset %>% filter(!duplicated(SiteName))
+
