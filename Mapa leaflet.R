@@ -32,7 +32,7 @@ maptypes <- c("MapQuestOpen.Aerial",
 
 map <- leaflet() %>% 
   addProviderTiles(maptypes[5])  # el 3 mola mucho!!!
-<<<<<<< HEAD
+
 
 # como fijar punto de "salida" (setView)
 
@@ -58,5 +58,26 @@ mapPrueba <- leaflet(width = 525, height = 500) %>%
 mapPrueba
 # finalmente ha salido el resultado esperado, tipo de mapa tres, con parecido ancho y alto, eso cuando pase a shiny
 # tendre que ir modificandolo, con zoom 4 sale EEUU o mejor dicho Norte America, las coordenadas de Wichita sirven.
-=======
->>>>>>> 628ec7c8a97352a3ac35ab4091d9a217d9f1f948
+
+# Once a map is made we often want to add some sort of marker or object on top of the map. 
+# We could add someting like a marker, or a line. These functions all follow the add*() format, 
+# including addMarkers, addPopups, addCircleMarkers, addCircles and others.
+# 
+# Here we're going to add a Marker and a CircleMarker. Markers are pretty useful, 
+# the "points" of the leaflet universe. We can modify the Marker further using its options parameter. 
+# The options accept a set of different markerOptions that allow you to drag, click, and hover over the markers:
+map <- leaflet() %>% 
+  addProviderTiles("Esri.WorldImagery") %>% # el mapa es tipo ciudad , viendose las casas, no me sirve
+  addMarkers(lng = -123.251,  # con addMarkers seleccionas un punto, quizás necesite dos, origen y destino.
+             lat = 49.263, 
+             popup = "You are here.", # cuando pulsas sobre el icno te dice tu estas aquí, interesante para mi shiny
+             options = markerOptions(draggable = TRUE, riseOnHover = TRUE)) %>%
+  addCircleMarkers(lng = -123.261, # otro tipo de agregar un punto, siendo el circulo de forma diferente, me gusta 
+                   lat = 49.273,     # mas el primero.
+                   popup = "You aren't here.",
+                   fillColor= "red", opacity = 1,
+                   options = markerOptions(draggable = FALSE, title = "Whoops")) %>%
+  setView(lng = -123.251,
+          lat = 49.263,
+          zoom = 13)
+
