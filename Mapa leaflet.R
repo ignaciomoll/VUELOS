@@ -32,6 +32,7 @@ maptypes <- c("MapQuestOpen.Aerial",
 
 map <- leaflet() %>% 
   addProviderTiles(maptypes[5])  # el 3 mola mucho!!!
+<<<<<<< HEAD
 
 # como fijar punto de "salida" (setView)
 
@@ -57,3 +58,5 @@ mapPrueba <- leaflet(width = 525, height = 500) %>%
 mapPrueba
 # finalmente ha salido el resultado esperado, tipo de mapa tres, con parecido ancho y alto, eso cuando pase a shiny
 # tendre que ir modificandolo, con zoom 4 sale EEUU o mejor dicho Norte America, las coordenadas de Wichita sirven.
+=======
+>>>>>>> 628ec7c8a97352a3ac35ab4091d9a217d9f1f948
